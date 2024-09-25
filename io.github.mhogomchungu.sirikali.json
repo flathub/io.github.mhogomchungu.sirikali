@@ -190,7 +190,8 @@
         {
           "type" : "patch",
           "paths" : [
-            "patches/securefs.patch"
+            "patches/securefs.patch",
+            "patches/securefs-version.patch"
           ]
         }
       ]
