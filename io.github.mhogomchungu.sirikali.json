@@ -50,6 +50,9 @@
       "cleanup" : [
         "*"
       ],
+      "config-opts" : [
+        "-DCMAKE_BUILD_TYPE=release"
+      ],
       "sources" : [
         {
           "type" : "archive",
@@ -65,6 +68,7 @@
         "*"
       ],
       "config-opts" : [
+        "-DCMAKE_BUILD_TYPE=release",
         "-DCRYPTOPP_SOURCES=src/deps/cryptopp1",
         "-DCRYPTOPP_BUILD_TESTING=OFF",
         "-DCRYPTOPP_BUILD_DOCUMENTATION=OFF"
@@ -104,6 +108,7 @@
         "*"
       ],
       "config-opts" : [
+        "-DCMAKE_BUILD_TYPE=release",
         "-Dprotobuf_BUILD_TESTS=OFF",
         "-Dprotobuf_BUILD_CONFORMANCE=OFF",
         "-Dprotobuf_ABSL_PROVIDER=package"
@@ -165,6 +170,7 @@
       "name" : "securefs",
       "buildsystem" : "cmake-ninja",
       "config-opts" : [
+        "-DCMAKE_BUILD_TYPE=release",
         "-DSECUREFS_USE_VCPKG=FALSE",
         "-DSECUREFS_ENABLE_UNIT_TEST=FALSE",
         "-DTCLAP_INCLUDE_DIRS=tclap/include"
@@ -200,7 +206,7 @@
         {
           "type" : "archive",
           "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.2.tar.xz",
-          "sha256" : "ee35c5ad6cc5dbf694e718f99ce275911413c4ebc18dbbdf7e3145463b4010e8"
+          "sha256" : "a624e81858f51902591bb8ea60c0d4c4deabc17ddff69710e54c8ecf19b4bde6"
         }
       ]
     }
