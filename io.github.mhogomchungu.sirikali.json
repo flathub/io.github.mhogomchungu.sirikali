@@ -198,6 +198,48 @@
       ]
     },
     {
+      "name" : "gocryptfs",
+      "buildsystem" : "simple",
+      "build-commands" : [
+        "ln -s `pwd`/bin/go /app/bin/go",
+        "`pwd`/build-without-openssl.bash",
+        "make install",
+        "rm -rf /app/bin/go"
+      ],
+      "cleanup" : [],
+      "config-opts" : [],
+      "sources" : [
+        {
+          "type" : "archive",
+          "url" : "https://github.com/rfjakob/gocryptfs/releases/download/v2.4.0/gocryptfs_v2.4.0_src-deps.tar.gz",
+          "sha256" : "45158daf20df7f94e0c9ec57ba07af21df2e25e15b8584bf3c7de96adbbc2efd"
+        },
+        {
+          "type" : "patch",
+          "paths" : [
+            "patches/gocryptfs.patch",
+            "patches/ggocryptfs_version.patch"
+          ]
+        },
+        {
+          "type" : "archive",
+          "only-arches" : [
+            "x86_64"
+          ],
+          "url" : "https://go.dev/dl/go1.23.2.linux-amd64.tar.gz",
+          "sha256" : "542d3c1705f1c6a1c5a80d5dc62e2e45171af291e755d591c5e6531ef63b454e"
+        },
+        {
+          "type" : "archive",
+          "only-arches" : [
+            "aarch64"
+          ],
+          "url" : "https://go.dev/dl/go1.23.2.linux-arm64.tar.gz",
+          "sha256" : "f626cdd92fc21a88b31c1251f419c17782933a42903db87a174ce74eeecc66a9"
+        }
+      ]
+    },
+    {
       "name" : "io.github.mhogomchungu.sirikali",
       "buildsystem" : "cmake-ninja",
       "config-opts" : [
@@ -208,7 +250,7 @@
         {
           "type" : "archive",
           "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.3.tar.xz",
-          "sha256" : "59aec7b42652ef013720e9a27fe45a5e59b8b375d6ef9b287e9467a7c5c1481e"
+          "sha256" : "a0d8829ce25baca8f5ef1421b633cd34aeacc03875861b87b6472c16581b3f9f"
         }
       ]
     }
