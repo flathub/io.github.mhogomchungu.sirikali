@@ -218,7 +218,7 @@
           "type" : "patch",
           "paths" : [
             "patches/gocryptfs.patch",
-            "patches/ggocryptfs_version.patch"
+            "patches/gocryptfs_version.patch"
           ]
         },
         {
