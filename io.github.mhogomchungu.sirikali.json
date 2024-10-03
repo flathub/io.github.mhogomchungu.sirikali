@@ -249,8 +249,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.3.tar.xz",
-          "sha256" : "a0d8829ce25baca8f5ef1421b633cd34aeacc03875861b87b6472c16581b3f9f"
+          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.4.tar.xz",
+          "sha256" : "f222d2722d042206a8bc97fed8bd8cdaf5dc818f27e2a56b0f121f6af63a041f"
         }
       ]
     }
