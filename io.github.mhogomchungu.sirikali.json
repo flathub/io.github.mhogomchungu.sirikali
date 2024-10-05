@@ -240,6 +240,84 @@
       ]
     },
     {
+      "name" : "range-v3",
+      "buildsystem" : "cmake-ninja",
+      "config-opts" : [
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "cleanup" : [
+        "*"
+      ],
+      "sources" : [
+        {
+          "type" : "archive",
+          "url" : "https://github.com/ericniebler/range-v3/archive/refs/tags/0.12.0.tar.gz",
+          "sha256" : "015adb2300a98edfceaf0725beec3337f542af4915cec4d0b89fa0886f4ba9cb"
+        }
+      ]
+    },
+    {
+      "name" : "spdlog",
+      "buildsystem" : "cmake-ninja",
+      "config-opts" : [
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "cleanup" : [
+        "*"
+      ],
+      "sources" : [
+        {
+          "type" : "archive",
+          "url" : "https://github.com/gabime/spdlog/archive/refs/tags/v1.14.1.tar.gz",
+          "sha256" : "1586508029a7d0670dfcb2d97575dcdc242d3868a259742b69f100801ab4e16b"
+        }
+      ]
+    },
+    {
+      "name" : "boost",
+      "buildsystem" : "simple",
+      "build-commands" : [
+        "`pwd`/bootstrap.sh --prefix=/app",
+        "`pwd`/b2 install --prefix=/app"
+      ],
+      "cleanup" : [
+        "*"
+      ],
+      "sources" : [
+        {
+          "type" : "archive",
+          "url" : "https://archives.boost.io/release/1.86.0/source/boost_1_86_0.tar.gz",
+          "sha256" : "2575e74ffc3ef1cd0babac2c1ee8bdb5782a0ee672b1912da40e5b4b591ca01f"
+        }
+      ]
+    },
+    {
+      "name" : "cryfs",
+      "buildsystem" : "cmake-ninja",
+      "config-opts" : [
+        "-DCMAKE_BUILD_TYPE=RELEASE",
+        "-DCRYFS_UPDATE_CHECKS=FALSE",
+        "-DDISABLE_OPENMP=ON",
+        "-DBoost_USE_STATIC_LIBS=ON"
+      ],
+      "cleanup" : [
+        "/share/*"
+      ],
+      "sources" : [
+        {
+          "type" : "archive",
+          "url" : "https://github.com/cryfs/cryfs/archive/refs/tags/1.0.0-rc1.tar.gz",
+          "sha256" : "79b4d665dd4fed2e4a380930e5c4d8ff458ef803881051cde193743d88168164"
+        },
+        {
+          "type" : "patch",
+          "paths" : [
+            "patches/cryfs.patch"
+          ]
+        }
+      ]
+    },
+    {
       "name" : "io.github.mhogomchungu.sirikali",
       "buildsystem" : "cmake-ninja",
       "config-opts" : [
@@ -249,8 +327,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.4.tar.xz",
-          "sha256" : "f222d2722d042206a8bc97fed8bd8cdaf5dc818f27e2a56b0f121f6af63a041f"
+          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.5.tar.xz",
+          "sha256" : "f16484bcad29f6b8a273b3bc4d152af6e175c959a753a0e76b49125e8382b4d4"
         }
       ]
     }
