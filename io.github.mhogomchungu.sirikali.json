@@ -168,38 +168,20 @@
       ]
     },
     {
-      "name" : "tcl",
-      "buildsystem" : "simple",
-      "build-commands" : [
-        "`pwd`/unix/configure --prefix=/app",
-        "make",
-        "make install"
-      ],
-      "cleanup" : [
-        "*"
-      ],
-      "sources" : [
-        {
-          "type" : "archive",
-          "url" : "https://github.com/tcltk/tcl/archive/refs/tags/core-8-6-15.tar.gz",
-          "sha256" : "26ec488cef5b9cd71a3290c257e40c2157fc258cad248f71404db56db8a016d1"
-        }
-      ]
-    },
-    {
       "name" : "sqlite3",
       "buildsystem" : "autotools",
       "cleanup" : [
         "*"
       ],
       "config-opts" : [
+        "--prefix=/app",
         "--enable-shared=no"
       ],
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/sqlite/sqlite/archive/refs/tags/major-release.tar.gz",
-          "sha256" : "9a16561f8a7dd0719d5fb86a05afc5ab362c840efbddfaeb7753dd3bcbbc1b37"
+          "url" : "https://www.sqlite.org/2024/sqlite-autoconf-3460100.tar.gz",
+          "sha256" : "67d3fe6d268e6eaddcae3727fce58fcc8e9c53869bdd07a0c61e38ddf2965071"
         }
       ]
     },
