@@ -336,6 +336,26 @@
       ]
     },
     {
+      "name" : "lxqt_wallet",
+      "buildsystem" : "cmake-ninja",
+      "config-opts" : [
+        "-DCMAKE_BUILD_TYPE=RELEASE"
+      ],
+      "cleanup" : [
+        "/lib/pkgconfig/lxqt-wallet.pc",
+        "/include/lxqt/lxqt_wallet.h",
+        "/lib/liblxqt-wallet.so",
+        "/bin/lxqt_wallet-cli"
+      ],
+      "sources" : [
+        {
+          "type" : "archive",
+          "url" : "https://github.com/lxqt/lxqt_wallet/releases/download/4.0.2/lxqt-wallet-4.0.2.tar.xz",
+          "sha256" : "3dbfc24555e88f6dd8aa79c2bf22e455f82d6a332e95418b08788d7adc226e50"
+        }
+      ]
+    },
+    {
       "name" : "io.github.mhogomchungu.sirikali",
       "buildsystem" : "cmake-ninja",
       "config-opts" : [
@@ -345,8 +365,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.5.tar.xz",
-          "sha256" : "f0af7fab548ed776e08e66e2763404f3922eb2b61dd9a6e485b3ebdbc370024c"
+          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.6.tar.xz",
+          "sha256" : "e7acc1798af8658dca07b3259664e19dd7c43b9ea83d7068f285571e3c63b143"
         }
       ]
     }
