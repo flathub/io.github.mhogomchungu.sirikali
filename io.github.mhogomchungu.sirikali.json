@@ -324,8 +324,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/cryfs/cryfs/archive/refs/tags/1.0.0-rc1.tar.gz",
-          "sha256" : "7d89ba1302fd6bbf92ad9a06779ed74eca5539052e78309bf10bbbc1d6fe0285"
+          "url" : "https://github.com/cryfs/cryfs/archive/refs/tags/1.0.0.tar.gz",
+          "sha256" : "8211c1637c2f8c419534c16c207efeae0d506abe9d8c7c0f44003e16a87d80a2"
         },
         {
           "type" : "patch",
@@ -365,8 +365,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.6.0/sirikali-1.6.0.6.tar.xz",
-          "sha256" : "e7acc1798af8658dca07b3259664e19dd7c43b9ea83d7068f285571e3c63b143"
+          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.7.0/SiriKali-1.7.0.tar.xz",
+          "sha256" : "a7c46205cdeb51b5d906eb11ec50cd6f14afcc89c0871cf7e3c87e1e6a43cb1f"
         }
       ]
     }
