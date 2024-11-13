@@ -325,7 +325,7 @@
         {
           "type" : "archive",
           "url" : "https://github.com/cryfs/cryfs/archive/refs/tags/1.0.0.tar.gz",
-          "sha256" : "8211c1637c2f8c419534c16c207efeae0d506abe9d8c7c0f44003e16a87d80a2"
+          "sha256" : "3ff4a11ab17a1c9334be977f826e83e8ea17a24d34b8acd3bbd29f5039654941"
         },
         {
           "type" : "patch",
