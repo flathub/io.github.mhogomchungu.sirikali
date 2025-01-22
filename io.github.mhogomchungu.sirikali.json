@@ -1,7 +1,7 @@
 {
   "app-id" : "io.github.mhogomchungu.sirikali",
   "runtime" : "org.kde.Platform",
-  "runtime-version" : "6.7",
+  "runtime-version" : "6.8",
   "sdk" : "org.kde.Sdk",
   "command" : "io.github.mhogomchungu.sirikali",
   "finish-args" : [
@@ -229,8 +229,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/rfjakob/gocryptfs/releases/download/v2.4.0/gocryptfs_v2.4.0_src-deps.tar.gz",
-          "sha256" : "45158daf20df7f94e0c9ec57ba07af21df2e25e15b8584bf3c7de96adbbc2efd"
+          "url" : "https://github.com/rfjakob/gocryptfs/releases/download/v2.5.0/gocryptfs_v2.5.0_src-deps.tar.gz",
+          "sha256" : "eed73d59a3f5019ec5ce6a2026cbff95789c2280308781bfa7da4aaf84126a67"
         },
         {
           "type" : "patch",
@@ -261,7 +261,9 @@
       "name" : "range-v3",
       "buildsystem" : "cmake-ninja",
       "config-opts" : [
-        "-DCMAKE_BUILD_TYPE=Release"
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DRANGE_V3_TESTS=OFF",
+        "-DRANGE_V3_EXAMPLES=OFF"
       ],
       "cleanup" : [
         "*"
@@ -365,8 +367,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.8.0/SiriKali-1.8.0.tar.xz",
-          "sha256" : "e5a05110d2df91fe317e12ca4e07f797dc70732436c9fc8dd4bdca2f5a49bc32"
+          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.8.1/SiriKali-1.8.1.tar.xz",
+          "sha256" : "e6c6ff51a0fe09e61b7297db50daa88eb33cfd0fbaf30c22df265a702a9e243f"
         }
       ]
     }
