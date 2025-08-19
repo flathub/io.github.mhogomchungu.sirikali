@@ -1,7 +1,7 @@
 {
   "app-id" : "io.github.mhogomchungu.sirikali",
   "runtime" : "org.kde.Platform",
-  "runtime-version" : "6.8",
+  "runtime-version" : "6.9",
   "sdk" : "org.kde.Sdk",
   "command" : "io.github.mhogomchungu.sirikali",
   "finish-args" : [
@@ -367,8 +367,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.8.2/SiriKali-1.8.2.tar.xz",
-          "sha256" : "be3313b3501a9a57a22abce8cdf0eaacd5ae0e4f6fa12c00555231b124072542"
+          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.8.3/SiriKali-1.8.3.tar.xz",
+          "sha256" : "1476ec4aa85cb60f346d81cb75c760b25bd55ea259d02871d8a37debf387d5b4"
         }
       ]
     }
