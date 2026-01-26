@@ -15,15 +15,19 @@
     "--talk-name=org.kde.kwalletd5",
     "--talk-name=org.freedesktop.Flatpak"
   ],
+  "cleanup" : [
+    "/include",
+    "/lib/cmake",
+    "/lib/pkgconfig",
+    "/share/man",
+    "*.la",
+    "*.a"
+  ],
   "modules" : [
     {
       "name" : "libfuse",
       "buildsystem" : "autotools",
       "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "*.a",
-        "*.la",
         "/lib/libulockmgr*"
       ],
       "config-opts" : [
@@ -130,11 +134,6 @@
     {
       "name" : "fruit",
       "buildsystem" : "cmake-ninja",
-      "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "*.a"
-      ],
       "config-opts" : [
         "-DCMAKE_BUILD_TYPE=Release",
         "-DFRUIT_USES_BOOST=FALSE",
@@ -188,8 +187,6 @@
         "make install",
         "rm -rf /app/bin/go"
       ],
-      "cleanup" : [],
-      "config-opts" : [],
       "sources" : [
         {
           "type" : "archive",
@@ -308,8 +305,6 @@
         "-DCMAKE_BUILD_TYPE=RELEASE"
       ],
       "cleanup" : [
-        "/lib/pkgconfig/lxqt-wallet.pc",
-        "/include/lxqt/lxqt_wallet.h",
         "/lib/liblxqt-wallet.so",
         "/bin/lxqt_wallet-cli"
       ],
