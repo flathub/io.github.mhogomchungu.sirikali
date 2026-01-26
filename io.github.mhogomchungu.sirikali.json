@@ -1,7 +1,7 @@
 {
   "app-id" : "io.github.mhogomchungu.sirikali",
   "runtime" : "org.kde.Platform",
-  "runtime-version" : "6.9",
+  "runtime-version" : "6.10",
   "sdk" : "org.kde.Sdk",
   "command" : "io.github.mhogomchungu.sirikali",
   "finish-args" : [
@@ -42,23 +42,6 @@
             "patches/fuse-2.9.2-namespace-conflict-fix.patch",
             "patches/fuse-closefrom.patch"
           ]
-        }
-      ]
-    },
-    {
-      "name" : "absl",
-      "buildsystem" : "cmake-ninja",
-      "cleanup" : [
-        "*"
-      ],
-      "config-opts" : [
-        "-DCMAKE_BUILD_TYPE=release"
-      ],
-      "sources" : [
-        {
-          "type" : "archive",
-          "url" : "https://github.com/abseil/abseil-cpp/releases/download/20240722.0/abseil-cpp-20240722.0.tar.gz",
-          "sha256" : "f50e5ac311a81382da7fa75b97310e4b9006474f9560ac46f54a9967f07d4ae3"
         }
       ]
     },
