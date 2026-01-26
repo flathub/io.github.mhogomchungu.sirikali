@@ -1,7 +1,7 @@
 {
   "app-id" : "io.github.mhogomchungu.sirikali",
   "runtime" : "org.kde.Platform",
-  "runtime-version" : "6.9",
+  "runtime-version" : "6.10",
   "sdk" : "org.kde.Sdk",
   "command" : "io.github.mhogomchungu.sirikali",
   "finish-args" : [
@@ -42,23 +42,6 @@
             "patches/fuse-2.9.2-namespace-conflict-fix.patch",
             "patches/fuse-closefrom.patch"
           ]
-        }
-      ]
-    },
-    {
-      "name" : "absl",
-      "buildsystem" : "cmake-ninja",
-      "cleanup" : [
-        "*"
-      ],
-      "config-opts" : [
-        "-DCMAKE_BUILD_TYPE=release"
-      ],
-      "sources" : [
-        {
-          "type" : "archive",
-          "url" : "https://github.com/abseil/abseil-cpp/releases/download/20240722.0/abseil-cpp-20240722.0.tar.gz",
-          "sha256" : "f50e5ac311a81382da7fa75b97310e4b9006474f9560ac46f54a9967f07d4ae3"
         }
       ]
     },
@@ -105,20 +88,18 @@
     {
       "name" : "protobuf",
       "buildsystem" : "cmake-ninja",
-      "cleanup" : [
-        "*"
-      ],
       "config-opts" : [
         "-DCMAKE_BUILD_TYPE=release",
         "-Dprotobuf_BUILD_TESTS=OFF",
-        "-Dprotobuf_BUILD_CONFORMANCE=OFF",
-        "-Dprotobuf_ABSL_PROVIDER=package"
+        "-Dprotobuf_ABSL_PROVIDER=package",
+        "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+        "-Dprotobuf_BUILD_SHARED_LIBS=ON"
       ],
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/protocolbuffers/protobuf/releases/download/v28.2/protobuf-28.2.tar.gz",
-          "sha256" : "b2340aa47faf7ef10a0328190319d3f3bee1b24f426d4ce8f4253b6f27ce16db"
+          "url" : "https://github.com/protocolbuffers/protobuf/releases/download/v33.4/protobuf-33.4.tar.gz",
+          "sha256" : "bc670a4e34992c175137ddda24e76562bb928f849d712a0e3c2fb2e19249bea1"
         }
       ]
     },
@@ -157,7 +138,8 @@
       "config-opts" : [
         "-DCMAKE_BUILD_TYPE=Release",
         "-DFRUIT_USES_BOOST=FALSE",
-        "-DBUILD_SHARED_LIBS=FALSE"
+        "-DBUILD_SHARED_LIBS=FALSE",
+        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
       ],
       "sources" : [
         {
