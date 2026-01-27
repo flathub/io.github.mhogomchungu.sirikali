@@ -325,9 +325,9 @@
       ],
       "sources" : [
         {
-          "type" : "archive",
-          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.8.4/SiriKali-1.8.4.tar.xz",
-          "sha256" : "e89daa759aa59990ea3e6995e2e2d18b6fb95dafb8e7b2b875285660c470e0c8"
+          "type" : "git",
+          "url" : "https://github.com/mhogomchungu/sirikali.git",
+          "commit" : "15733a058b4856d0f9e0c5a530e573131688c5d3"
         }
       ]
     }
