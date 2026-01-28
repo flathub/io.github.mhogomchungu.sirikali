@@ -1,7 +1,7 @@
 {
   "app-id" : "io.github.mhogomchungu.sirikali",
   "runtime" : "org.kde.Platform",
-  "runtime-version" : "6.9",
+  "runtime-version" : "6.10",
   "sdk" : "org.kde.Sdk",
   "command" : "io.github.mhogomchungu.sirikali",
   "finish-args" : [
@@ -15,15 +15,19 @@
     "--talk-name=org.kde.kwalletd5",
     "--talk-name=org.freedesktop.Flatpak"
   ],
+  "cleanup" : [
+    "/include",
+    "/lib/cmake",
+    "/lib/pkgconfig",
+    "/share/man",
+    "*.la",
+    "*.a"
+  ],
   "modules" : [
     {
       "name" : "libfuse",
       "buildsystem" : "autotools",
       "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "*.a",
-        "*.la",
         "/lib/libulockmgr*"
       ],
       "config-opts" : [
@@ -42,23 +46,6 @@
             "patches/fuse-2.9.2-namespace-conflict-fix.patch",
             "patches/fuse-closefrom.patch"
           ]
-        }
-      ]
-    },
-    {
-      "name" : "absl",
-      "buildsystem" : "cmake-ninja",
-      "cleanup" : [
-        "*"
-      ],
-      "config-opts" : [
-        "-DCMAKE_BUILD_TYPE=release"
-      ],
-      "sources" : [
-        {
-          "type" : "archive",
-          "url" : "https://github.com/abseil/abseil-cpp/releases/download/20240722.0/abseil-cpp-20240722.0.tar.gz",
-          "sha256" : "f50e5ac311a81382da7fa75b97310e4b9006474f9560ac46f54a9967f07d4ae3"
         }
       ]
     },
@@ -105,20 +92,18 @@
     {
       "name" : "protobuf",
       "buildsystem" : "cmake-ninja",
-      "cleanup" : [
-        "*"
-      ],
       "config-opts" : [
         "-DCMAKE_BUILD_TYPE=release",
         "-Dprotobuf_BUILD_TESTS=OFF",
-        "-Dprotobuf_BUILD_CONFORMANCE=OFF",
-        "-Dprotobuf_ABSL_PROVIDER=package"
+        "-Dprotobuf_ABSL_PROVIDER=package",
+        "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+        "-Dprotobuf_BUILD_SHARED_LIBS=ON"
       ],
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/protocolbuffers/protobuf/releases/download/v28.2/protobuf-28.2.tar.gz",
-          "sha256" : "b2340aa47faf7ef10a0328190319d3f3bee1b24f426d4ce8f4253b6f27ce16db"
+          "url" : "https://github.com/protocolbuffers/protobuf/releases/download/v33.4/protobuf-33.4.tar.gz",
+          "sha256" : "bc670a4e34992c175137ddda24e76562bb928f849d712a0e3c2fb2e19249bea1"
         }
       ]
     },
@@ -149,39 +134,17 @@
     {
       "name" : "fruit",
       "buildsystem" : "cmake-ninja",
-      "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "*.a"
-      ],
       "config-opts" : [
         "-DCMAKE_BUILD_TYPE=Release",
         "-DFRUIT_USES_BOOST=FALSE",
-        "-DBUILD_SHARED_LIBS=FALSE"
+        "-DBUILD_SHARED_LIBS=FALSE",
+        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
       ],
       "sources" : [
         {
           "type" : "archive",
           "url" : "https://github.com/google/fruit/archive/refs/tags/v3.7.1.tar.gz",
           "sha256" : "ed4c6b7ebfbf75e14a74e21eb74ce2703b8485bfc9e660b1c36fb7fe363172d0"
-        }
-      ]
-    },
-    {
-      "name" : "sqlite3",
-      "buildsystem" : "autotools",
-      "cleanup" : [
-        "*"
-      ],
-      "config-opts" : [
-        "--prefix=/app",
-        "--enable-shared=no"
-      ],
-      "sources" : [
-        {
-          "type" : "archive",
-          "url" : "https://www.sqlite.org/2024/sqlite-autoconf-3460100.tar.gz",
-          "sha256" : "67d3fe6d268e6eaddcae3727fce58fcc8e9c53869bdd07a0c61e38ddf2965071"
         }
       ]
     },
@@ -224,8 +187,6 @@
         "make install",
         "rm -rf /app/bin/go"
       ],
-      "cleanup" : [],
-      "config-opts" : [],
       "sources" : [
         {
           "type" : "archive",
@@ -326,8 +287,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/cryfs/cryfs/archive/refs/tags/1.0.1.tar.gz",
-          "sha256" : "4e13ade27751b977e60321d06e78cccabb7168d72a1d4cde5597656399d61245"
+          "url" : "https://github.com/cryfs/cryfs/archive/refs/tags/1.0.3.tar.gz",
+          "sha256" : "d5867a41b52d591c575bc2b403181f44b1b677d17a86c2b28f77ebf1f9f08ef1"
         },
         {
           "type" : "patch",
@@ -344,8 +305,6 @@
         "-DCMAKE_BUILD_TYPE=RELEASE"
       ],
       "cleanup" : [
-        "/lib/pkgconfig/lxqt-wallet.pc",
-        "/include/lxqt/lxqt_wallet.h",
         "/lib/liblxqt-wallet.so",
         "/bin/lxqt_wallet-cli"
       ],
@@ -367,8 +326,8 @@
       "sources" : [
         {
           "type" : "archive",
-          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.8.4/SiriKali-1.8.4.tar.xz",
-          "sha256" : "e89daa759aa59990ea3e6995e2e2d18b6fb95dafb8e7b2b875285660c470e0c8"
+          "url" : "https://github.com/mhogomchungu/sirikali/releases/download/1.8.5/SiriKali-1.8.5.tar.xz",
+          "sha256" : "ef89be49387680897f67410f624e70ac21f4acd58caf81bb680eb73eb7440fc1"
         }
       ]
     }
