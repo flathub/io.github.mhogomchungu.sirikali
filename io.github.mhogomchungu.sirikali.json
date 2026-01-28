@@ -3,6 +3,9 @@
   "runtime" : "org.kde.Platform",
   "runtime-version" : "6.10",
   "sdk" : "org.kde.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.golang"
+  ],
   "command" : "io.github.mhogomchungu.sirikali",
   "finish-args" : [
     "--share=ipc",
@@ -181,11 +184,16 @@
     {
       "name" : "gocryptfs",
       "buildsystem" : "simple",
+      "build-options": {
+        "append-path": "/usr/lib/sdk/golang/bin",
+        "env": {
+          "GOBIN": "/app/bin",
+          "GOROOT": "/usr/lib/sdk/golang"
+        }
+      },
       "build-commands" : [
-        "ln -s `pwd`/bin/go /app/bin/go",
         "`pwd`/build-without-openssl.bash",
-        "make install",
-        "rm -rf /app/bin/go"
+        "make install"
       ],
       "sources" : [
         {
@@ -199,22 +207,6 @@
             "patches/gocryptfs.patch",
             "patches/gocryptfs_version.patch"
           ]
-        },
-        {
-          "type" : "archive",
-          "only-arches" : [
-            "x86_64"
-          ],
-          "url" : "https://go.dev/dl/go1.23.2.linux-amd64.tar.gz",
-          "sha256" : "542d3c1705f1c6a1c5a80d5dc62e2e45171af291e755d591c5e6531ef63b454e"
-        },
-        {
-          "type" : "archive",
-          "only-arches" : [
-            "aarch64"
-          ],
-          "url" : "https://go.dev/dl/go1.23.2.linux-arm64.tar.gz",
-          "sha256" : "f626cdd92fc21a88b31c1251f419c17782933a42903db87a174ce74eeecc66a9"
         }
       ]
     },
